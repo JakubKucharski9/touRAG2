@@ -9,3 +9,12 @@ dependencies = [
     "python-dotenv>=1.1.0",
     "smolagents>=1.18.0",
 ]
+
+[project.optional-dependencies]
+dev = ["uv"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
