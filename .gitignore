@@ -1,0 +1,8 @@
+.gradio/
+.venv/
+venv/
+.idea/
+.vscode/
+*.egg-info/
+
+.env
