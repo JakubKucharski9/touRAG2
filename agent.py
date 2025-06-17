@@ -37,9 +37,3 @@ def agent_instance() -> Agent:
     agent = Agent(tools=agent_tools, model=llm_model, max_steps=10, additional_authorized_imports=["requests"], add_base_tools=True)
     agent.prompt_templates["system_prompt"] = system_prompt + "\n" + agent.prompt_templates["system_prompt"]
     return agent
-
-
-if __name__ == "__main__":
-    prompt = "Where rapper Future have concerts in 2025?"
-    agent = agent_instance()
-    agent(prompt)
