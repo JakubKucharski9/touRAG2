@@ -1,12 +1,16 @@
 import gradio as gr
 from agent import agent_instance
 
-def random_response(message, history):
-    reply = agent(message)
+def agent_response(message, history):
+    prompt = message
+    if history:
+        prompt = history[-2].get("content") + "\n" + prompt
+
+    reply = agent(prompt)
     return reply
 
 def chat_fn():
-    chat = gr.ChatInterface(fn=random_response,type="messages")
+    chat = gr.ChatInterface(fn=agent_response,type="messages")
     return chat
 
 if __name__ == "__main__":
